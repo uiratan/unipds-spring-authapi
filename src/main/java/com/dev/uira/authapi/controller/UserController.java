@@ -21,4 +21,10 @@ public class UserController {
         return ResponseEntity.status(201).body(service.addUser(user));
     }
 
+    @PostMapping("/login")
+    public ResponseEntity<MyToken> login(@RequestBody User user) {
+        return ResponseEntity.ok(service.userLogin(user));
+    }
+
+
 }
